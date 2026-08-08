@@ -1,6 +1,8 @@
-namespace TwitterClone.Domain.Entities;
-
-public class Bookmark
+namespace TwitterClone.Domain.Entities
 {
+    public class Bookmark
+    {
     
+    }
 }
+

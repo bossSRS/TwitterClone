@@ -1,6 +1,8 @@
-namespace TwitterClone.Domain.Entities;
-
-public class Message
+namespace TwitterClone.Domain.Entities
 {
+    public class Message
+    {
     
+    }
 }
+

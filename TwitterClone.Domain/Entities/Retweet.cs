@@ -1,20 +1,22 @@
-namespace TwitterClone.Domain.Entities;
-
-public class Retweet
+namespace TwitterClone.Domain.Entities
 {
-    private Guid _userId;    
-    private Guid _tweetId;
-    private DateTime _retweetedAt;     
-    public Guid UserId
+    public class Retweet
     {
-        get { return _userId; }
-    }
-    public Guid TweetId
-    {    
-        get { return _tweetId; }
-    }
-    public DateTime RetweetedAt
-    {    
-        get { return _retweetedAt; }
+        private Guid _userId;    
+        private Guid _tweetId;
+        private DateTime _retweetedAt;     
+        public Guid UserId
+        {
+            get { return _userId; }
+        }
+        public Guid TweetId
+        {    
+            get { return _tweetId; }
+        }
+        public DateTime RetweetedAt
+        {    
+            get { return _retweetedAt; }
+        }
     }
 }
+

@@ -1,6 +1,8 @@
-namespace TwitterClone.Domain.Entities;
-
-public class Notification
+namespace TwitterClone.Domain.Entities
 {
+    public class Notification
+    {
     
+    }
 }
+

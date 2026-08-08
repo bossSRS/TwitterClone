@@ -1,6 +1,8 @@
-namespace TwitterClone.Domain.Entities;
-
-public class Follow
+namespace TwitterClone.Domain.Entities
 {
+    public class Follow
+    {
     
+    }
 }
+
