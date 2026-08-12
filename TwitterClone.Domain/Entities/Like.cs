@@ -1,23 +1,16 @@
+using System;
+
 namespace TwitterClone.Domain.Entities
 {
-    public class Like
+    public class Like : BaseEntity
     {
-        private Guid  _userId;    
-        private Guid  _tweetId;
-        private DateTime  _likedAt;     
-        public Guid  UserId
-        {
-            get { return  _userId; }
-        }
-        public Guid  TweetId
-        {    
-            get { return  _tweetId; }
-        }
-        public DateTime  LikedAt
-        {    
-            get { return  _likedAt; }
-        }
+        public Guid UserId { get; private set; }
+        public Guid TweetId { get; private set; }
 
+        public Like(Guid userId, Guid tweetId) : base()
+        {
+            UserId = userId;
+            TweetId = tweetId;
+        }
     }
 }
-

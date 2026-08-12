@@ -1,24 +1,38 @@
+using System;
+
 namespace TwitterClone.Domain.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
-        private Guid _id;
-        private string _username;
-        private string _email;
-        public Guid Id
-        {  
-            get { return  _id; }
-        } 
-        public string  Username
+        private string _username = string.Empty;
+        private string _email = string.Empty;
+
+        public string Username
         {
-            get { return  _username; }   
-            set { _username = value ; }
-        }     
-        public string  Email
-        {         
-            get { return  _email; }      
-            set { _email = value ; }
+            get => _username;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Username cannot be empty.");
+                _username = value;
+            }
+        }
+
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value) || !value.Contains("@"))
+                    throw new ArgumentException("Invalid email address.");
+                _email = value;
+            }
+        }
+
+        public User(string username, string email) : base()
+        {
+            Username = username;
+            Email = email;
         }
     }
 }
-
