@@ -14,5 +14,7 @@ namespace TwitterClone.Domain.Entities
 
             Message = message;
         }
+
+        public override string GetMessage() => Message;
     }
 }

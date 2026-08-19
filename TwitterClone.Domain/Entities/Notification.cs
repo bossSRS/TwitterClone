@@ -2,13 +2,13 @@ using System;
 
 namespace TwitterClone.Domain.Entities
 {
-    public class Notification : BaseEntity
+    public abstract class Notification : BaseEntity
     {
-        public Guid RecipientId { get; private set; }
+        public Guid RecipientId { get; protected set; }
         public string Type { get; protected set; }
-        public bool IsRead { get; protected set; }
+        public bool IsRead { get; private set; }
 
-        public Notification(Guid recipientId, string type) : base()
+        protected Notification(Guid recipientId, string type) : base()
         {
             RecipientId = recipientId;
             Type = type;
@@ -20,5 +20,7 @@ namespace TwitterClone.Domain.Entities
             IsRead = true;
             ModifiedAt = DateTime.UtcNow;
         }
+
+        public abstract string GetMessage();
     }
 }

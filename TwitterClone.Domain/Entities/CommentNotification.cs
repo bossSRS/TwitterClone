@@ -13,5 +13,7 @@ namespace TwitterClone.Domain.Entities
             CommenterId = commenterId;
             CommentId = commentId;
         }
+
+        public override string GetMessage() => $"User {CommenterId} commented on your tweet";
     }
 }

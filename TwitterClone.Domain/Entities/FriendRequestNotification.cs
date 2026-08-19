@@ -11,5 +11,7 @@ namespace TwitterClone.Domain.Entities
         {
             SenderId = senderId;
         }
+
+        public override string GetMessage() => $"User {SenderId} sent you a friend request";
     }
 }

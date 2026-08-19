@@ -13,5 +13,7 @@ namespace TwitterClone.Domain.Entities
             LikedById = likedById;
             TweetId = tweetId;
         }
+
+        public override string GetMessage() => $"User {LikedById} liked your tweet";
     }
 }
