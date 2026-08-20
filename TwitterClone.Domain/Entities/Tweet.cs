@@ -2,7 +2,7 @@ using System;
 
 namespace TwitterClone.Domain.Entities
 {
-    public class Tweet : BaseEntity
+    public class Tweet : BaseEntity, ILikeable
     {
         private string _content = string.Empty;
 
@@ -33,6 +33,16 @@ namespace TwitterClone.Domain.Entities
             Content = content;
             ModifiedAt = DateTime.UtcNow;
         }
+
+        public bool IsDeleted { get; private set; }
+
+        public void Delete()
+        {
+            IsDeleted = true;
+            ModifiedAt = DateTime.UtcNow;
+        }
+
+        public bool CanBeLiked() => !IsDeleted && !string.IsNullOrWhiteSpace(Content);
 
         public override string Describe() => $"Tweet: {Content}";
 

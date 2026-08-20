@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 namespace TwitterClone.Domain.Entities
 {
-    public class User : BaseEntity
+    public class User : BaseEntity, IFollowable, INotifiable
     {
         private string _username = string.Empty;
         private string _email = string.Empty;
@@ -29,10 +30,19 @@ namespace TwitterClone.Domain.Entities
             }
         }
 
+        public List<Guid> Followers { get; private set; } = new();
+        public List<Guid> Notifications { get; private set; } = new();
+
         public User(string username, string email) : base()
         {
             Username = username;
             Email = email;
         }
+
+        public void Follow(Guid id) => Followers.Add(id);
+
+        public void Unfollow(Guid id) => Followers.Remove(id);
+
+        public void Notify(Notification n) => Notifications.Add(n.Id);
     }
 }
